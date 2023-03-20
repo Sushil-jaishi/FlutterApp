@@ -23,7 +23,11 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body: Text('Hello Everyone!', style: mytheme(),)
+        body:Card(
+          elevation: 5,
+          shadowColor: Colors.green,
+          child: Text('Hello Everyone',style: TextStyle(fontSize: 30,color: Colors.green),),
+        )
     );
   }
 
