@@ -20,20 +20,26 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body:InkWell(
-          onTap: () {
-            print('tapped on the container');
-          },
-          onDoubleTap: (){
-            print('double tapped on the container');
-          },
-          onLongPress: (){
-            print('long pressed on the container');
-          },
-          child: Container(
-            width:100,
-            height: 100,
-            color: Colors.green,
+        body:SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              Container(
+                width: 300,
+                height: 200,
+                color: Colors.green,
+              ),
+              Container(
+                width: 300,
+                height: 200,
+                color: Colors.yellow,
+              ),
+              Container(
+                width: 300,
+                height: 200,
+                color: Colors.green,
+              )
+            ],
           ),
         )
     );
