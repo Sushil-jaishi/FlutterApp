@@ -8,7 +8,15 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'hello',
-      theme: ThemeData( primarySwatch: Colors.green),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        textTheme: TextTheme(
+          displayMedium: TextStyle(
+            color: Colors.green,
+            fontSize: 30
+          )
+        )
+      ),
       home: HomePageScreen(),
     );
   }
@@ -20,10 +28,7 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body:CircleAvatar(
-          backgroundImage: AssetImage('assets/images/image.jpg'),
-          radius: 100,
-        )
+        body: Text('Hello Everyone!',style: Theme.of(context).textTheme.displayMedium)
     );
   }
 
