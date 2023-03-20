@@ -20,15 +20,41 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body:Center(
-          child: Container(
-            height: 200,
-            width: 200,
-            decoration: BoxDecoration(
+        body:Row(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Container(
+                width: 50,
+                height: 100,
                 color: Colors.green,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(70),bottomRight: Radius.circular(70))
+              ),
             ),
-          ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                width: 50,
+                height: 100,
+                color: Colors.yellow,
+              ),
+            ),
+            Expanded(
+              flex: 3,
+              child: Container(
+                width: 50,
+                height: 100,
+                color: Colors.purple,
+              ),
+            ),
+            Expanded(
+              flex: 4,
+              child: Container(
+                width: 50,
+                height: 100,
+                color: Colors.green,
+              ),
+            )
+          ],
         )
     );
   }
