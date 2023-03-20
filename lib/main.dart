@@ -20,7 +20,37 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body:Image.asset('assets/images/image.jpg')
+        body:Column(
+          //Row widget can be implemented similarly as Column widget
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.yellow,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.pink,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+            )
+          ],
+        )
     );
   }
 
