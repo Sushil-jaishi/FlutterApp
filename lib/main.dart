@@ -32,10 +32,10 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil',),
         ),
-        body:GridView.count(
-          crossAxisCount: 3,
+        body:GridView.extent(
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
+          maxCrossAxisExtent: 100,
           children: [
             Container(
               color: arrColors[0],
