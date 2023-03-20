@@ -20,27 +20,31 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body:SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Container(
-                width: 300,
-                height: 200,
-                color: Colors.green,
-              ),
-              Container(
-                width: 300,
-                height: 200,
-                color: Colors.yellow,
-              ),
-              Container(
-                width: 300,
-                height: 200,
-                color: Colors.green,
-              )
-            ],
-          ),
+        body:ListView(
+          scrollDirection: Axis.vertical,
+          reverse: true,
+          children: [
+            Container(
+              width: 300,
+              height: 100,
+              color: Colors.green,
+            ),
+            Container(
+              width: 300,
+              height: 100,
+              color: Colors.yellow,
+            ),
+            Container(
+              width: 300,
+              height: 100,
+              color: Colors.green,
+            ),
+            Container(
+              width: 300,
+              height: 100,
+              color: Colors.yellow,
+            ),
+          ],
         )
     );
   }
