@@ -20,36 +20,21 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body:Column(
-          //Row widget can be implemented similarly as Column widget
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.yellow,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.pink,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-            )
-          ],
+        body:InkWell(
+          onTap: () {
+            print('tapped on the container');
+          },
+          onDoubleTap: (){
+            print('double tapped on the container');
+          },
+          onLongPress: (){
+            print('long pressed on the container');
+          },
+          child: Container(
+            width:100,
+            height: 100,
+            color: Colors.green,
+          ),
         )
     );
   }
