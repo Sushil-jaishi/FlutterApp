@@ -21,6 +21,12 @@ class HomePageScreen extends StatelessWidget{
           title: Text('Sushil'),
         ),
         body:
+        Container(
+            width: 200,
+            height: 200,
+            color: Colors.green,
+            child: Text('HI')
+        )
     );
   }
 
