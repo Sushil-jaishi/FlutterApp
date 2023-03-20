@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/CustomTheme/myTheme.dart';
 
 void main(){
   runApp(MyApp());
@@ -10,12 +11,6 @@ class MyApp extends StatelessWidget{
       title: 'hello',
       theme: ThemeData(
         primarySwatch: Colors.green,
-        textTheme: TextTheme(
-          displayMedium: TextStyle(
-            color: Colors.green,
-            fontSize: 30
-          )
-        )
       ),
       home: HomePageScreen(),
     );
@@ -28,7 +23,7 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body: Text('Hello Everyone!',style: Theme.of(context).textTheme.displayMedium)
+        body: Text('Hello Everyone!', style: mytheme(),)
     );
   }
 
