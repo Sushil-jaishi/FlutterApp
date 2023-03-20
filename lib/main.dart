@@ -20,41 +20,13 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body:Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.green,
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.yellow,
-              ),
-            ),
-            Expanded(
-              flex: 3,
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.purple,
-              ),
-            ),
-            Expanded(
-              flex: 4,
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.green,
-              ),
-            )
-          ],
+        body:Container(
+          margin: EdgeInsets.all(10),
+          color: Colors.green,
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: Text('Sushil',style: TextStyle(fontSize: 30),),
+          ),
         )
     );
   }
