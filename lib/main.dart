@@ -20,7 +20,9 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body:Text('Hi i am sushil jaishi',style: TextStyle( fontSize: 30,color: Colors.green,fontWeight: FontWeight.w500),)
+        body:Center(
+            child: Text('Hi i am sushil jaishi',style: TextStyle( fontSize: 30,color: Colors.green,fontWeight: FontWeight.w500),)
+        )
     );
   }
 
