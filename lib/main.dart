@@ -14,19 +14,21 @@ class MyApp extends StatelessWidget{
   }
 }
 class HomePageScreen extends StatelessWidget{
+  var arrName = ['Sushil','Deepa','Kalpana'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body:Container(
-          margin: EdgeInsets.all(10),
-          color: Colors.green,
-          child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Text('Sushil',style: TextStyle(fontSize: 30),),
-          ),
+        body:ListView.builder(itemBuilder: (context, index) {
+          return ListTile(
+            leading: Text('${index+1}'),
+            title: Text('${arrName[index]}'),
+
+          );
+        },
+          itemCount: arrName.length,
         )
     );
   }
