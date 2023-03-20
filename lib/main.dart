@@ -20,16 +20,7 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil'),
         ),
-        body:TextButton(
-          //Elevated button and outlined button can also implemented as textbutton
-          child: Text('click me'),
-          onPressed: (){
-            print('pressed on button');
-          },
-          onLongPress: (){
-            print('long pressed on button');
-          },
-        )
+        body:Image.asset('assets/images/image.jpg')
     );
   }
 
