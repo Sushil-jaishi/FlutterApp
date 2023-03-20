@@ -32,34 +32,15 @@ class HomePageScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('Sushil',),
         ),
-        body:GridView.extent(
+        body:GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
           crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          maxCrossAxisExtent: 100,
-          children: [
-            Container(
-              color: arrColors[0],
-            ),
-            Container(
-              color: arrColors[1],
-            ),
-            Container(
-              color: arrColors[2],
-            ),
-            Container(
-              color: arrColors[3],
-            ),
-            Container(
-              color: arrColors[4],
-            ),
-            Container(
-              color: arrColors[5],
-            ),
-            Container(
-              color: arrColors[6],
-            )
-          ],
-        )
+          mainAxisSpacing: 10
+        ),
+          itemBuilder: (context, index) {
+          return Container(color: arrColors[index],);
+        },
+        itemCount: arrColors.length,)
     );
   }
 
