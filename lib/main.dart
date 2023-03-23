@@ -35,47 +35,14 @@ class HomePageScreenState extends State<HomePageScreen>{
         backgroundColor: Colors.black87,
         title: Text('Sushil'),
       ),
-      body:Wrap(
-        alignment: WrapAlignment.spaceEvenly,
+      body:Column(
         children: [
-          Container(
-            width: 100,
+          Text('Hi'),
+          SizedBox(
             height: 100,
-            color: Colors.red,
+            width: 100,
           ),
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.blue,
-          ),
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.red,
-          ),
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.blue,
-          ), Container(
-            width: 100,
-            height: 100,
-            color: Colors.red,
-          ),
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.blue,
-          ), Container(
-            width: 100,
-            height: 100,
-            color: Colors.red,
-          ),
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.blue,
-          )
+          Text('Hello')
         ],
       )
     );
