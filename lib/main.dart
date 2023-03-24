@@ -35,14 +35,12 @@ class HomePageScreenState extends State<HomePageScreen>{
         backgroundColor: Colors.black87,
         title: Text('Sushil'),
       ),
-      body:Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Icon(Icons.lock,
-          size: 40,
-          color: Colors.green,),
-          Icon(Icons.email)
-        ],
+      body:ConstrainedBox(
+        constraints: BoxConstraints(
+          maxHeight: 100,
+          maxWidth: 200,
+        ),
+        child: Text('Hi i am sushil. I am a computer science student',style: TextStyle(fontSize: 30),),
       )
     );
   }
