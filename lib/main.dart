@@ -28,6 +28,7 @@ class HomePageScreen extends StatefulWidget{
 }
 
 class HomePageScreenState extends State<HomePageScreen>{
+  var name =TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,30 +38,37 @@ class HomePageScreenState extends State<HomePageScreen>{
         backgroundColor: Colors.black87,
         title: Text('Sushil'),
       ),
-      body:Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: double.infinity,
-            height: 200,
-            color: Colors.green,
-          ),
-          Container(
-            width: double.infinity,
-            height: 300,
-            color: Colors.yellow,
-          ),
-          ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return SecondScreen();
-            },));
-          },
-              child:Text("click here")
-          )
+      body:SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: double.infinity,
+              height: 200,
+              color: Colors.green,
+            ),
+            Container(
+              width: double.infinity,
+              height: 300,
+              color: Colors.yellow,
+            ),
+            TextField(
+              controller: name,
+            ),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return SecondScreen(name.text.toString());
+              },));
+            },
+                child:Text("click here")
+            )
 
-        ],
+          ],
+        ),
       )
+
     );
   }
+
 
 }
