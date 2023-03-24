@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+
+import 'package:flutterapp/secondScreen.dart';
 void main(){
   runApp(MyApp());
 }
@@ -35,12 +37,28 @@ class HomePageScreenState extends State<HomePageScreen>{
         backgroundColor: Colors.black87,
         title: Text('Sushil'),
       ),
-      body:ConstrainedBox(
-        constraints: BoxConstraints(
-          maxHeight: 100,
-          maxWidth: 200,
-        ),
-        child: Text('Hi i am sushil. I am a computer science student',style: TextStyle(fontSize: 30),),
+      body:Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: double.infinity,
+            height: 200,
+            color: Colors.green,
+          ),
+          Container(
+            width: double.infinity,
+            height: 300,
+            color: Colors.yellow,
+          ),
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return SecondScreen();
+            },));
+          },
+              child:Text("click here")
+          )
+
+        ],
       )
     );
   }
