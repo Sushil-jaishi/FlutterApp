@@ -35,15 +35,19 @@ class HomePageScreenState extends State<HomePageScreen>{
         backgroundColor: Colors.black87,
         title: Text('Sushil'),
       ),
-      body:Column(
-        children: [
-          Text('Hi'),
-          SizedBox(
-            height: 100,
-            width: 100,
-          ),
-          Text('Hello')
-        ],
+      body:RichText(
+          text:TextSpan(
+            style: TextStyle(fontSize: 30,color: Colors.green),
+            children: [
+              TextSpan(
+                text: 'hello '
+              ),
+              TextSpan(
+                text: 'Sushil',
+                style: TextStyle(fontSize: 40, color: Colors.blue)
+              )
+            ]
+          )
       )
     );
   }
