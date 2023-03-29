@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutterapp/secondScreen.dart';
 void main(){
   runApp(MyApp());
 }
@@ -12,63 +11,60 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       title: 'hello',
       theme: ThemeData(
-        primarySwatch: Colors.brown,
+        primarySwatch: Colors.green,
       ),
       home: HomePageScreen(),
     );
   }
 }
-
 class HomePageScreen extends StatefulWidget{
   @override
-  State<StatefulWidget> createState() {
-    return HomePageScreenState();
-  }
-
+  State<HomePageScreen> createState() => _HomePageScreenState();
 }
 
-class HomePageScreenState extends State<HomePageScreen>{
-  var name =TextEditingController();
-
+class _HomePageScreenState extends State<HomePageScreen> {
+  var finalName;
+  @override
+  void initState() {
+    getdata();
+  }
+  var namecontroller=TextEditingController();
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black87,
-        title: Text('Sushil'),
-      ),
-      body:SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              width: double.infinity,
-              height: 200,
-              color: Colors.green,
-            ),
-            Container(
-              width: double.infinity,
-              height: 300,
-              color: Colors.yellow,
-            ),
-            TextField(
-              controller: name,
-            ),
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return SecondScreen(name.text.toString());
-              },));
-            },
-                child:Text("click here")
-            )
-
-          ],
+        appBar: AppBar(
+          title: Text('Sushil',),
         ),
-      )
+        body: Container(
+          child: Column(
+            children: [
+              TextField(controller: namecontroller,
+                decoration: InputDecoration(),
+              ),
+              ElevatedButton(onPressed: ()async{
+                var prefs= await SharedPreferences.getInstance();
+                prefs.setString('name', namecontroller.text.toString());
+                getdata();
+                setState(() {
+                });
 
+              },
+                child:Text('Click here'),
+
+              ),
+              Text('$finalName')
+            ],
+          ),
+        )
     );
   }
 
+  void getdata () async{
+    var prefs=await SharedPreferences.getInstance();
+    var name=prefs.getString('name');
+    finalName=name??'Noname';
+    setState(() {
 
+    });
+  }
 }
